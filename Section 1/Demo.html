@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+      $.ajax({
+type:"POST",
+url:"https://ouycjjwiw0.execute-api.ap-southeast-1.amazonaws.com/Production",
+crossDomain: true,
+data: JSON.stringify({ID:1}),
+contentType: "application/json",
+dataType:"json",
+success:function(data,status){
+alert(data);
+document.getElementById("Cname").value=data;
+}
+});
+    });
+});
+</script>
+</head>
+<body>
+
+<div class="jumbotron">
+  <div class="container text-center">
+    <h1>Customer Data</h1>      
+    <p>Data</p>
+  </div>
+</div>
+<form>
+<label for="usr">ID:</label>
+<input type="text" class="form-control" id="usr" value="Hello">
+<label for="usr">Name:</label>
+<input type="text" class="form-control" id="Cname" value="Hello"  placeholder="Hello">
+</form>
+
+<button type="button" class="btn" style="position:relative;top:10px;left:265px;">Get Name</button>
+
+
+</body>
+</html>

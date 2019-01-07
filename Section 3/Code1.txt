@@ -1,0 +1,5 @@
+exports.handler = (event, context, callback) => {
+     var message = event.Records[0].Sns.Message;
+    console.log('Message received from SNS:', message); 
+    callback(null, "message");
+};

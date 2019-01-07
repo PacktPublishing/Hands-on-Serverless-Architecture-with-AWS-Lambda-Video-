@@ -1,0 +1,18 @@
+"Resources": {
+"Simple": {
+  "Type": "AWS::Lambda::Function",
+  "Properties": {
+    "Handler": "index.handler",
+    "Role": "arn:aws:iam::213171387512:role/service-role/lambdarole",
+    "Code": {
+      "S3Bucket": "clouddemo345",
+      "S3Key": "index.zip"
+    },
+    "Runtime": "nodejs6.10",
+    "Timeout": 25,
+    "TracingConfig": {
+      "Mode": "Active"
+   }
+  }
+}
+}

@@ -1,0 +1,8 @@
+exports.handler = (event, context, callback) => {
+
+event.Records.forEach(function(record) {
+    var body = record.body;
+    console.log(body);
+  });
+  callback(null, "Message from SQS queue");
+};
